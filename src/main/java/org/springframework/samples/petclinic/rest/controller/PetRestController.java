@@ -33,15 +33,12 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.swagger.annotations.Api;
-
 /**
  * @author Vitaliy Fedoriv
  */
 
 @RestController
 @CrossOrigin(exposedHeaders = "errors, content-type")
-@Api(tags = { "pet" })
 @RequestMapping("api")
 public class PetRestController implements PetsApi {
 

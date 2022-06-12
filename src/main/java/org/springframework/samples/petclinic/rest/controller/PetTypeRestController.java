@@ -35,11 +35,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import io.swagger.annotations.Api;
-
 @RestController
 @CrossOrigin(exposedHeaders = "errors, content-type")
-@Api(tags = { "pettypes" })
 @RequestMapping("api")
 public class PetTypeRestController implements PettypesApi {
 

@@ -36,15 +36,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import io.swagger.annotations.Api;
-
 /**
  * @author Vitaliy Fedoriv
  */
 
 @RestController
 @CrossOrigin(exposedHeaders = "errors, content-type")
-@Api(tags = { "vet" })
 @RequestMapping("api")
 public class VetRestController implements VetsApi {
 
