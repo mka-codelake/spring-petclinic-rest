@@ -212,6 +212,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Owner'
+        204:
+          description: Update successful.
         400:
           description: Bad request.
           content:
