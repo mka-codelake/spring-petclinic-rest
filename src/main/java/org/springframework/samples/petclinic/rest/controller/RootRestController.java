@@ -25,6 +25,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.Api;
+
 /**
  * @author Vitaliy Fedoriv
  *
@@ -32,15 +34,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(exposedHeaders = "errors, content-type")
+@Api(hidden = true)
 @RequestMapping("/")
 public class RootRestController {
 
-    @Value("#{servletContext.contextPath}")
-    private String servletContextPath;
+	@Value("#{servletContext.contextPath}")
+	private String servletContextPath;
 
 	@RequestMapping(value = "/")
-	public void redirectToSwagger(HttpServletResponse response) throws IOException {
-		response.sendRedirect(this.servletContextPath + "/swagger-ui/index.html");
+	public void redirectToSwagger(final HttpServletResponse response) throws IOException {
+		response.sendRedirect(servletContextPath + "/swagger-ui/index.html");
 	}
 
 }
