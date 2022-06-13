@@ -157,6 +157,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Owner'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Owner'
         304:
           description: Not modified.
           headers:
