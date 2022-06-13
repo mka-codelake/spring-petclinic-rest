@@ -24,7 +24,7 @@ cd spring-petclinic-rest
 
 ### With Docker
 ```
-docker run -p 9966:9966 springcommunity/spring-petclinic-rest
+docker run -p 9966:9966 mkagel/spring-petclinic-rest
 ```
 
 You can then access petclinic here: [http://localhost:9966/petclinic/](http://localhost:9966/petclinic/)
