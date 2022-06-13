@@ -17,12 +17,17 @@
 package org.springframework.samples.petclinic.config;
 
 
+import java.lang.reflect.Field;
+import java.util.Collections;
+import java.util.List;
+
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.util.ReflectionUtils;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping;
+
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
@@ -31,10 +36,6 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.spring.web.plugins.WebFluxRequestHandlerProvider;
 import springfox.documentation.spring.web.plugins.WebMvcRequestHandlerProvider;
-
-import java.lang.reflect.Field;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Java config for Springfox swagger documentation plugin
@@ -57,13 +58,14 @@ public class SwaggerConfig {
    private ApiInfo getApiInfo() {
 	   return new ApiInfo(
 		"REST Petclinic backend Api Documentation",
-		"This is REST API documentation of the Spring Petclinic backend. If authentication is enabled, when calling the APIs use admin/admin",
+		"This is REST API documentation of the Spring Petclinic backend. If authentication is enabled, when calling the APIs use admin/admin." +
+		"It is based on Vitaliy Fedoriv's example, which can be found here: https://github.com/spring-petclinic/spring-petclinic-rest",
 		"1.0",
 		"Petclinic backend terms of service",
 		new Contact(
-				"Vitaliy Fedoriv",
-				"https://github.com/spring-petclinic/spring-petclinic-rest",
-				"vitaliy.fedoriv@gmail.com"),
+				"Michael Kagel",
+				"https://github.com/mka-codelake/spring-petclinic-rest",
+				"michael.kagel@msg.group"),
 		"Apache 2.0",
 		"http://www.apache.org/licenses/LICENSE-2.0", Collections.emptyList());
    }
